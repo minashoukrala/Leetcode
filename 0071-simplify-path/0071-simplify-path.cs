@@ -20,7 +20,7 @@ public class Solution {
 
         }
 
-        if(result.Equals(""))return "/";
+        if(result.Length == 0)return "/";
 
         return result.ToString();
         
