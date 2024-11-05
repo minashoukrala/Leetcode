@@ -13,10 +13,11 @@ public class Solution {
             graph[edge[1]].Add(edge[0]);
         }
 
-        foreach(var kvp in graph){
-            if(!seen.Contains(kvp.Key)){ 
+        for(int i = 0; i < n; i++){
+            if(!seen.Contains(i)){ 
                 counter++;
-                dfs(graph, seen, ref counter, kvp.Key);
+                if(graph.ContainsKey(i))
+                    dfs(graph, seen, ref counter, i);
             }
         }
         return counter;
@@ -24,13 +25,13 @@ public class Solution {
 
 
     public void dfs(Dictionary<int, List<int>> graph, HashSet<int> seen, ref int counter, int key){
-            if(!seen.Contains(key)){ 
+          
                 seen.Add(key);
-                Console.WriteLine(key);
                 foreach(var neighbor in graph[key]){
-                    dfs(graph, seen, ref counter, neighbor);
+                    if(!seen.Contains(neighbor))
+                        dfs(graph, seen, ref counter, neighbor);
                 }  
-            }   
+            
             return;  
     }
 }
