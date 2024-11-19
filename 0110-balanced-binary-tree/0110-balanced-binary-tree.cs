@@ -14,24 +14,21 @@
 public class Solution {
     public bool IsBalanced(TreeNode root) {
 
-        if(root==null)  
-            return true;
-
-        
-        
-        return (Math.Abs(maxDepth(root.left)-maxDepth(root.right))<2) && IsBalanced(root.left) && IsBalanced(root.right);
+       return  CheckHeight(root) != -1;
         
     }
 
-    public int maxDepth(TreeNode node){
+     public int CheckHeight(TreeNode node) {
+        if (node == null) return 0;
 
-        if(node==null)
-            return -1;
+        int leftHeight = CheckHeight(node.left);
+        if (leftHeight == -1) return -1; // Left subtree is unbalanced
         
-        int left=maxDepth(node.left);
-        int right=maxDepth(node.right);
-
-        return 1+ Math.Max(left,right);
-
+        int rightHeight = CheckHeight(node.right);
+        if (rightHeight == -1) return -1; // Right subtree is unbalanced
+        
+        if (Math.Abs(leftHeight - rightHeight) > 1) return -1; // Current node is unbalanced
+        
+        return Math.Max(leftHeight, rightHeight) + 1; // Height of the current node
     }
 }
