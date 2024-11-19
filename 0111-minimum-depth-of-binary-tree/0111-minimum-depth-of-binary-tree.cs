@@ -16,9 +16,13 @@ public class Solution {
         
         if(root == null) return 0;
 
-        if(root.left == null) return 1 + MinDepth(root.right);
-        else if(root.right == null) return 1 + MinDepth(root.left);
+        int left = MinDepth(root.left);
+        int right = MinDepth(root.right);
+        
+        if (root.left == null || root.right == null) {
+            return Math.Max(left, right) + 1;
+        }
 
-        return 1 + Math.Min(MinDepth(root.left), MinDepth(root.right));
+        return Math.Min(left,right) + 1;
     }
 }
