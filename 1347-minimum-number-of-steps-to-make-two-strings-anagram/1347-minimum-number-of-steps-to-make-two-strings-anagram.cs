@@ -7,9 +7,7 @@ public class Solution {
                 sDict[s[i]]+=1;
             else
                 sDict[s[i]]=1;
-        }
-
-        for(int i=0;i<t.Length;i++){
+            
             if(sDict.ContainsKey(t[i]))
                 sDict[t[i]]-=1;
             else
