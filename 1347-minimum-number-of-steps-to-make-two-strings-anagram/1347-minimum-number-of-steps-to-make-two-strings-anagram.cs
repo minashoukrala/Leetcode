@@ -14,6 +14,12 @@ public class Solution {
                 sDict[t[i]]=-1;
         }
 
+        //leetcode
+        //practice
+
+        //l:1 e:2 t:0 c:-1 o:1 d:1 p:-1 r:-1 a:-1 i:-1 
+        // 
+
         int ans=0;
         foreach(var kvp in sDict){
             if(kvp.Value>0)
