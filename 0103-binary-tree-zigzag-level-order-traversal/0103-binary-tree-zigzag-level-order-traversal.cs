@@ -24,30 +24,28 @@ public class Solution {
         queue.Enqueue(root);
 
         while(queue.Count>0){
-            IList<int> currLevel=new List<int>();
+            LinkedList<int> currLevel = new LinkedList<int>();
             int Length=queue.Count;
 
             for(int i=0;i<Length;i++){
 
                 TreeNode currNode = queue.Dequeue();
-                currLevel.Add(currNode.val);
-                if(left){
-                    if(currNode.left!=null)
-                        queue.Enqueue(currNode.left);
-                    if(currNode.right!= null)
-                        queue.Enqueue(currNode.right);
-                    
+                
+                 if (left) {
+                    currLevel.AddLast(currNode.val);
+                } else {
+                    currLevel.AddFirst(currNode.val);
                 }
-                else{
-                    if(currNode.right!= null)
-                        queue.Enqueue(currNode.right);
-                    if(currNode.left!=null)
-                        queue.Enqueue(currNode.left);
-                    
-                }
-            }
-                left=!left;
 
+                
+                if(currNode.right!= null)
+                    queue.Enqueue(currNode.right);
+                if(currNode.left!=null)
+                    queue.Enqueue(currNode.left);
+                    
+            }
+
+            left=!left;
             ans.Add(new List<int> (currLevel));
         }
 
