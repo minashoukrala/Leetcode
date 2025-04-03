@@ -1,6 +1,8 @@
 public class Solution {
     public string Convert(string s, int numRows) {
         
+        if(numRows == 1)
+            return s;
         var strings = new List<StringBuilder>();
         for(int i = 0; i < numRows; i++){
             strings.Add(new StringBuilder());
@@ -20,9 +22,7 @@ public class Solution {
             if(up)
                 index--;
             else
-                index++;
-
-            
+                index++;       
        }
        StringBuilder ans = new StringBuilder();
        
