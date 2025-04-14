@@ -17,19 +17,19 @@ public class Solution {
             if(!seen.Contains(i)){ 
                 counter++;
                 if(graph.ContainsKey(i))
-                    dfs(graph, seen, ref counter, i);
+                    dfs(graph, seen, i);
             }
         }
         return counter;
     }
 
 
-    public void dfs(Dictionary<int, List<int>> graph, HashSet<int> seen, ref int counter, int key){
+    public void dfs(Dictionary<int, List<int>> graph, HashSet<int> seen, int key){
           
                 seen.Add(key);
                 foreach(var neighbor in graph[key]){
                     if(!seen.Contains(neighbor))
-                        dfs(graph, seen, ref counter, neighbor);
+                        dfs(graph, seen, neighbor);
                 }  
             
             return;  
