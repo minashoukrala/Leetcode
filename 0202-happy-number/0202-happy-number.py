@@ -14,12 +14,9 @@ class Solution:
 
             while(tempN > 0):
                 remainder = tempN % 10
-                newN = newN + remainder * remainder
-               
+                newN = newN + remainder * remainder  
                 tempN //= 10
-                print(newN)
-
-            
+                
             n = newN
 
         return n == 1
