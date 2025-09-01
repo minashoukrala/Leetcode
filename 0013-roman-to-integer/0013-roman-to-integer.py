@@ -14,15 +14,15 @@ class Solution:
             
             if i != len(s)-1 and s[i:i+2] in romanMapping:
                 ans += romanMapping[s[i:i+2]]
-                print(s[i:i+2])
+               
                 i += 2
                 
             else:
                 ans += romanMapping[s[i]]
-                print(s[i])
+                
                 i += 1
                
-            print(ans)
+     
          
         
         return ans
