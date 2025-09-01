@@ -10,7 +10,6 @@ class Solution:
         while xCopy > 0:
             
             ans = (ans * 10) + int(xCopy%10)
-            print(ans)
 
             xCopy =int(xCopy/10)
 
