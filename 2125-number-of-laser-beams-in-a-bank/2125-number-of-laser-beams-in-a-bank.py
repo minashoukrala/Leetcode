@@ -8,7 +8,6 @@ class Solution:
             for c in s:
                 if c == "1":
                     laserInLevel += 1
-            print(laserInLastLevel)
 
             if laserInLevel > 0:
                 totalLasersBeams += laserInLastLevel * laserInLevel
