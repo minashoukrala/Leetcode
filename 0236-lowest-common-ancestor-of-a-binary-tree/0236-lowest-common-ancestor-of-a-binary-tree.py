@@ -13,7 +13,7 @@ class Solution:
 
 
     
-        while(True):
+        while p != None and q != None:
             if p == q:
                 return p
             (pParent, pLevel) = parent[p]
@@ -29,12 +29,6 @@ class Solution:
                 q = qParent
                 p = pParent
                 
-
-
-
-
-
-    
 
     def setParents(self, node, parent, level):
 
