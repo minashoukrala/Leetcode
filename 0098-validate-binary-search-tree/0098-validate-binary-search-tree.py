@@ -8,7 +8,7 @@ class Solution:
     def isValidBST(self, root: Optional[TreeNode]) -> bool:
 
 
-        return self.dfs(root, 99999999999999999999,-9999999999999999999999)
+        return self.dfs(root, float('inf'), float('-inf'))
 
 
     def dfs(self, node, maxi, mini):
