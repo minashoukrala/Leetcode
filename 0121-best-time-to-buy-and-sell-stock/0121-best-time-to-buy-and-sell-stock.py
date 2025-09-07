@@ -7,8 +7,7 @@ class Solution:
                 mini=prices[i]
             
            
-            if diff<(prices[i]-mini):
-                diff=prices[i]-mini
+            diff = max(diff, prices[i] - mini)
                
             
         return diff    
