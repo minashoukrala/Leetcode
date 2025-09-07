@@ -5,9 +5,7 @@ class Solution:
         seen=set()
 
         while col < len(matrix[0]) and row >= 0:
-            if (row, col) in seen:
-                return False
-            seen.add((row,col))
+           
             if target > matrix[row][col]:
                 col += 1
             elif matrix[row][col]> target:
